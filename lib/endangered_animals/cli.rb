@@ -21,13 +21,15 @@ class EndangeredAnimals::CLI
   def menu 
     input = nil 
     while input != "exit" 
-        puts "Select the animal you'd like to read more about or type exit to close:" #this is placed inside while loop so it is shown after a number for animal is selected and then user can continue to go back and forth betweween animals. you have recording of this on phone.
+        puts "Select the animal you'd like to read more about or type list to see animals again or type exit to close:" #this is placed inside while loop so it is shown after a number for animal is selected and then user can continue to go back and forth betweween animals. you have recording of this on phone.
       input = gets.strip.downcase
       case input 
       when "1"
         puts "More info on animal 1..."
       when "2"
           puts "More info on animal 2..."
+      when "list"
+        list_animals
       end
     end
   end
