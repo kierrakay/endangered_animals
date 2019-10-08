@@ -1,4 +1,4 @@
-require "endangered_animals/version"
+require_relative "./endangered_animals/version"
 
 module EndangeredAnimals
   class Error < StandardError; end

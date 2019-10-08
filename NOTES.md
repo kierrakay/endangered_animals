@@ -25,6 +25,9 @@ Which animal do you want to learn more about?
 
 -Will give details about animal, it’s scientific name and conservation status.
 
+*Load interperter and then environment so bin can grab files from lib
+-ruby interperter is #!/usr/bin/env ruby in endangered_animals file
+
 *How to run bin file
 - you can do "ruby bin/endangered_animals" but you don't want to run CLI like this.
 - I want to be able to do "./bin/endangered_animals" and run it how a user is going to run it when they install gem. 

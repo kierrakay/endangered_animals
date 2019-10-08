@@ -1,3 +1,6 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby 
 
-puts "Hello Kierra"
+#loading main lib is code below
+require './lib/endangered_animals'
+# have class called CLI that i can instantiate "new" and use the call method on. EndangeredAnimals is the constant
+EndangeredAnimals::CLI.new.call 
