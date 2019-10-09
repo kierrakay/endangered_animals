@@ -11,11 +11,14 @@ class EndangeredAnimals::CLI
     #here doc - http://blog.jayfields.com/2006/12/ruby-multiline-strings-here-doc-or.html
     #here doc which is giant string
     #.gsub /^\s+/, "" gets rid of indentation in the here doc
+    
     puts "Current Endangered Animals:"
-    puts <<-DOC.gsub /^\s+/, ""
-      1. African Elephant’s - Scientific name: Loxodonta africana - Conservation status - Vulnerable
-      2. African Wild Dog - Scientific name: Lycaon  pictus - Conservation Status - Endangered 
-      DOC
+    # puts <<-DOC.gsub /^\s+/, ""
+    #   1. African Elephant’s - Scientific name: Loxodonta africana - Conservation status - Vulnerable
+    #   2. African Wild Dog - Scientific name: Lycaon  pictus - Conservation Status - Endangered 
+    #   DOC
+    #   line below is saying I have an Object called capital a Animals that has a class method called "currently" that calls on class Animals that should return the animals with @animals. 
+      @animals = EndangeredAnimals::Animals.currently
   end 
   
   def menu 
