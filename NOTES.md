@@ -56,3 +56,10 @@ ific name:
         the_animal = @animals[input.to_i-1]
         puts "#{the_animal.name} - #{the_animal.scientific_name} - #{the_animal.conservation_status}"
         #puts @animals[input.to_i-1] <-old code and we changed to above because now we have a variable to hold these objects. where as before we hard coded a string. 
+
+*operation 
+cli.rb 
+-def list_animals method depends on the EndangeredAnimals::Animals.currently class method in order to return instances of @animals
+
+
+

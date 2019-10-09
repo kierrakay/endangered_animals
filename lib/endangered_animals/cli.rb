@@ -36,7 +36,7 @@ class EndangeredAnimals::CLI
       if input.to_i > 0 
         the_animal = @animals[input.to_i-1]
         puts "#{the_animal.name} - #{the_animal.scientific_name} - #{the_animal.conservation_status}"
-        #puts @animals[input.to_i-1] 
+        #puts @animals[input.to_i-1] this hard codes string. above puts objects in variable.
       elsif input == "list"
         list_animals
       else
