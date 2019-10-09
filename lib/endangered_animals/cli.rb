@@ -36,6 +36,7 @@ class EndangeredAnimals::CLI
       if input.to_i > 0 
         puts @animals[input.to_i-1]
       elsif input == "list"
+        list_animals
       else
        puts "Not sure what you want? Type list or exit!"
       end

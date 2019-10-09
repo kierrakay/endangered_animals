@@ -9,7 +9,7 @@ class EndangeredAnimals::Animals
       # 1. African Elephant - Scientific name: Loxodonta africana - Conservation status - Vulnerable
       # 2. African Wild Dog - Scientific name: Lycaon pictus - Conservation status - Endangered 
       # DOC
-      #delete this once you get working in console.
+      #delete this once you get working in console. other wise it'll list in console instead of just show instances. this list needs to be in cli.rb
       
       animal_1 = self.new 
       animal_1.name = "African Elephant"
