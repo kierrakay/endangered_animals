@@ -2,7 +2,7 @@ class EndangeredAnimals::Animals
   
   #work on second page url and details of animal later
   def self.currently
-    #I should return a bunch of instances of animals
+    #I should return a bunch of instances of animals and its properties, name Scientific conservation status url
       puts <<-DOC.gsub /^\s+/, ''
       
       1. African Elephant - Scientific name: Loxodonta africana - Conservation status - Vulnerable
