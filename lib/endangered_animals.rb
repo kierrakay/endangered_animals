@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'nokogiri'
+require 'httparty'
 require 'pry'
 require_relative "./endangered_animals/version"
 require_relative './endangered_animals/animals'
