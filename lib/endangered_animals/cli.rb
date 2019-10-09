@@ -14,9 +14,12 @@ class EndangeredAnimals::CLI
     
     puts "Current Endangered Animals:"
     # puts <<-DOC.gsub /^\s+/, ""
-    #   1. African Elephant’s - Scientific name: Loxodonta africana - Conservation status - Vulnerable
+    #   1. African Elephant - Scientific name: Loxodonta africana - Conservation status - Vulnerable
     #   2. African Wild Dog - Scientific name: Lycaon  pictus - Conservation Status - Endangered 
     #   DOC
+    #moved this code to animals.rb once we got the cli interface working.
+    
+    
     #   line below is saying I have an Object called capital a Animals that has a class method called "currently" that calls on class Animals that should return the animals with @animals. 
       @animals = EndangeredAnimals::Animals.currently
   end 
