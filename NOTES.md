@@ -64,4 +64,7 @@ cli.rb
 -spec.add_dependency "nokogiri" added this in gemspec file to scrape
  -(spec.add_development_dependency "rspec") notice it doesnt have development and thats because its not a development one but is for everything
 
+animals.rb 
+-(open("https://www.worldwildlife.org/species/directory")) because youre saying open you need to have require "open-uri" in endangered_animals.rb 
+  
 

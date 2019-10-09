@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'nokogiri'
+require 'pry'
 require_relative "./endangered_animals/version"
 require_relative './endangered_animals/animals'
 require_relative './endangered_animals/cli' #now this cli class will be loaded
