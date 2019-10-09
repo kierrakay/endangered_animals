@@ -9,27 +9,17 @@ class EndangeredAnimals::Animals
   end 
   
   
-  #   def self.scrape_animals 
+   def self.scrape_animals 
+     url = "https://www.worldwildlife.org/species/directory"
+     unparsed_page = HTTParty.get(url)
+     parsed_page = Nokogiri::HTML(unparsed_page)
+     binding.pry
+  end
+end
+
+
     
-#     animals = []
-    
-#     animals << self.scrape_world_wild_life
-    
-#     #go to url, find animals 
-#     #extract properties
-#     #instantiate an animal 
-    
-   
-#     animals 
-#   end 
-  
-#   def self.scrape_world_wild_life
-    
-#     doc = Nokogiri::HTML(open("https://www.worldwildlife.org/species/directory"))
-#     binding.pry
-#   end
-# end
-   
+
    
    
    
