@@ -51,3 +51,8 @@ ific name:
   - when you want to test in console file type "./bin/console and run EndangeredAnimals:Animals.currently" to get instances. 
   -  @animals.each.with_index(1) do |animal,i|
    puts "#{1}. #{animal.name} - #{animal.scientific_name} - #{animal.conservation_status}".. the (1) if you chain 1 with the index itll start array at that index so we dont have to put -1 all the time. 
+
+-  cli.rb
+        the_animal = @animals[input.to_i-1]
+        puts "#{the_animal.name} - #{the_animal.scientific_name} - #{the_animal.conservation_status}"
+        #puts @animals[input.to_i-1] <-old code and we changed to above because now we have a variable to hold these objects. where as before we hard coded a string. 

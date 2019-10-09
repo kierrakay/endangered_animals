@@ -34,7 +34,9 @@ class EndangeredAnimals::CLI
       input = gets.strip.downcase
       
       if input.to_i > 0 
-        puts @animals[input.to_i-1]
+        the_animal = @animals[input.to_i-1]
+        puts "#{the_animal.name} - #{the_animal.scientific_name} - #{the_animal.conservation_status}"
+        #puts @animals[input.to_i-1] 
       elsif input == "list"
         list_animals
       else
