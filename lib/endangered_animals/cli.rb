@@ -15,7 +15,7 @@ class EndangeredAnimals::CLI
     puts "Current Endangered Animals:"
     # puts <<-DOC.gsub /^\s+/, ''
     #   1. African Elephant - Scientific name: Loxodonta africana - Conservation status - Vulnerable
-    #   2. African Wild Dog - Scientific name: Lycaon pictus - Conservation Status - Endangered 
+    #   2. African Wild Dog - Scientific name: Lycaon pictus - Conservation status - Endangered 
     #   DOC
     #moved this code to animals.rb once we got the cli interface working.
     

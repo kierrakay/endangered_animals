@@ -1,12 +1,13 @@
 class EndangeredAnimals::Animals
   
+   attr_accessor :name, :scientific_name, :conservation_status, :url
   #work on second page url and details of animal later
   def self.currently
     #I should return a bunch of instances of animals and its properties, name Scientific conservation status url
       puts <<-DOC.gsub /^\s+/, ''
       
       1. African Elephant - Scientific name: Loxodonta africana - Conservation status - Vulnerable
-      2. African Wild Dog - Scientific name: Lycaon pictus - Conservation Status - Endangered 
+      2. African Wild Dog - Scientific name: Lycaon pictus - Conservation status - Endangered 
       DOC
       animal_1 = self.new 
       animal_name = "African Elephant"
