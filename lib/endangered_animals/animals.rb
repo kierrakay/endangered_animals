@@ -1,31 +1,54 @@
 class EndangeredAnimals::Animals
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-#   attr_accessor :name, :scientific_name, :conservation_status, :url
+  attr_accessor :name, :scientific_name, :conservation_status, :url
    
-#   def self.currently
-#     # scrape worldwildlife and return animals based on data 
-#     #this method calls self.scrape_animals so the def self.scrape_animals  method should work
-#     self.scrape_animals
+  def self.currently
+    # scrape worldwildlife and return animals based on data 
+    #this method calls self.scrape_animals so the def self.scrape_animals  method should work
+    self.scrape_animals
+  end 
+  
+  
+  #   def self.scrape_animals 
+    
+#     animals = []
+    
+#     animals << self.scrape_world_wild_life
+    
+#     #go to url, find animals 
+#     #extract properties
+#     #instantiate an animal 
+    
+   
+#     animals 
 #   end 
+  
+#   def self.scrape_world_wild_life
+    
+#     doc = Nokogiri::HTML(open("https://www.worldwildlife.org/species/directory"))
+#     binding.pry
+#   end
+# end
+   
+   
+   
+   
+   
+   
+   
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
 #   def self.scrape_animals 
     
