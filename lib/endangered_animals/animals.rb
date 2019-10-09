@@ -8,7 +8,7 @@ class EndangeredAnimals::Animals
       2. African Wild Dog - Scientific name: Lycaon  pictus - Conservation Status - Endangered 
       DOC
       animal_1 = self.new 
-      animal_name = "African Elephants"
+      animal_name = "African Elephant"
       animal_1.scientific_name = "Loxodonta africana"
       animal_1.conservation_status = true 
       animal_1.url = "https://www.worldwildlife.org/species/directory"
