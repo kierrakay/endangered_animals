@@ -36,4 +36,9 @@ Which animal do you want to learn more about?
 - cd bin/ ...looks in the bin directory. so we will type that and then type ls -lah (list of all attributes in readable format)
 it'll show that the file has (rw..read and write permissions but not rwxr permissions ..which is-rw-r--r-- 1 merry-paradigm-9237 merry-paradigm-9237   40 Oct  8 20:21 endangered_animals but not "rwxr" permissions ..the x is executable perrmisions. so to add the x in our file just type chmod +x endangered _ animals (without the space by underscore) to add those permissons. chmod is checkmod commands. now when we type/path file ./endagered _ animals we have now taught our operating system how to interpret this file using ruby with the #! shabang line and gave operating system permissions to execute the file through that interpereter on my behalf.
 
-
+What is an animal?
+an animal has a common name
+an animal has a scientific name
+an animal has a conservation status 
+an animal has a url 
+an animal has details 
