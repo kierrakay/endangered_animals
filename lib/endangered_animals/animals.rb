@@ -12,7 +12,7 @@ class EndangeredAnimals::Animals
       #delete this once you get working in console.
       
       animal_1 = self.new 
-      animal_.name = "African Elephant"
+      animal_1.name = "African Elephant"
       animal_1.scientific_name = "Loxodonta africana"
       animal_1.conservation_status = "Vulnerable"
       animal_1.url = "https://www.worldwildlife.org/species/directory"
