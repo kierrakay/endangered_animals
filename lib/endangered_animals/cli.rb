@@ -22,21 +22,21 @@ class EndangeredAnimals::CLI
     
     #   line below is saying I have an Object called capital a Animals that has a class method called "currently" that calls on class Animals that should return the animals with @animals. 
       @animals = EndangeredAnimals::Animals.currently
-  end 
+      @animals.each.with_index(1) do |animal,i|
+        puts "#{1}. #{animal.name} - #{animal.scientific_name} - #{animal.conservation_status}"
+      end
+    end 
   
   def menu 
     input = nil 
     while input != "exit" 
-        puts "Select the animal you'd like to read more about or type list to see animals again or type exit to close:" #this is placed inside while loop so it is shown after a number for animal is selected and then user can continue to go back and forth betweween animals. you have recording of this on phone.
+      puts "Select the animal you'd like to read more about or type list to see animals again or type exit to close:" #this is placed inside while loop so it is shown after a number for animal is selected and then user can continue to go back and forth betweween animals. you have recording of this on phone.
       input = gets.strip.downcase
-      case input 
-      when "1"
-        puts "More info on animal 1..."
-      when "2"
-          puts "More info on animal 2..."
-      when "list"
-        list_animals
-      else 
+      
+      if input.to_i > 0 
+        puts @animals[input.to_i-1]
+      elsif input == "list"
+      else
        puts "Not sure what you want? Type list or exit!"
       end
     end
@@ -46,3 +46,37 @@ class EndangeredAnimals::CLI
     puts "See you tomorrow cutie!"
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+#   def menu 
+#     input = nil 
+#     while input != "exit" 
+#         puts "Select the animal you'd like to read more about or type list to see animals again or type exit to close:" #this is placed inside while loop so it is shown after a number for animal is selected and then user can continue to go back and forth betweween animals. you have recording of this on phone.
+#       input = gets.strip.downcase
+#       case input 
+#       when "1"
+#         puts "More info on animal 1..."
+#       when "2"
+#           puts "More info on animal 2..."
+#       when "list"
+#         list_animals
+#       else 
+#       puts "Not sure what you want? Type list or exit!"
+#       end
+#     end
+#   end
+  
+#   def goodbye 
+#     puts "See you tomorrow cutie!"
+#   end
+# end

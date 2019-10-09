@@ -48,3 +48,6 @@ ific name:
  #here doc - http://blog.jayfields.com/2006/12/ruby-multiline-strings-here-doc-or.html
     #here doc which is giant string
     #.gsub /^\s+/, "" gets rid of indentation in the here doc
+  - when you want to test in console file type "./bin/console and run EndangeredAnimals:Animals.currently" to get instances. 
+  -  @animals.each.with_index(1) do |animal,i|
+   puts "#{1}. #{animal.name} - #{animal.scientific_name} - #{animal.conservation_status}".. the (1) if you chain 1 with the index itll start array at that index so we dont have to put -1 all the time. 
