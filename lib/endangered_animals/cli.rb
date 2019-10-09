@@ -30,6 +30,8 @@ class EndangeredAnimals::CLI
           puts "More info on animal 2..."
       when "list"
         list_animals
+      else 
+       puts "Not sure what you want? Type list or exit!"
       end
     end
   end
