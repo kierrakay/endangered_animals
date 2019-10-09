@@ -37,6 +37,6 @@ class EndangeredAnimals::CLI
   end
   
   def goodbye 
-    puts "See you tomorrow!"
+    puts "See you tomorrow cutie!"
   end
 end
