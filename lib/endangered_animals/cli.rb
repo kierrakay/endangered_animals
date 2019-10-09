@@ -10,12 +10,12 @@ class EndangeredAnimals::CLI
   def list_animals
     #here doc - http://blog.jayfields.com/2006/12/ruby-multiline-strings-here-doc-or.html
     #here doc which is giant string
-    #.gsub /^\s+/, "" gets rid of indentation in the here doc
+    #.gsub /^\s+/, '' gets rid of indentation in the here doc
     
     puts "Current Endangered Animals:"
-    # puts <<-DOC.gsub /^\s+/, ""
+    # puts <<-DOC.gsub /^\s+/, ''
     #   1. African Elephant - Scientific name: Loxodonta africana - Conservation status - Vulnerable
-    #   2. African Wild Dog - Scientific name: Lycaon  pictus - Conservation Status - Endangered 
+    #   2. African Wild Dog - Scientific name: Lycaon pictus - Conservation Status - Endangered 
     #   DOC
     #moved this code to animals.rb once we got the cli interface working.
     

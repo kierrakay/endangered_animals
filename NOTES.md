@@ -18,7 +18,7 @@ How to Build a CLI Gem
 - "Executables is the file theyre running and it goes in the bin directory."
 
 Ex: 
-1. African Elephant’s - Scientific name: Loxodonta africana - Conservation status - Vulnerable
+1. African Elephant’s - ScientLoxodonta africana - Conservation status - Vulnerable
 2. African Wild Dog - Scientific name: Lycaon  pictus - Conservation Status - Endangered 
 
 Which animal do you want to learn more about?
@@ -42,3 +42,9 @@ What is an animal?
 -an animal has a conservation status 
 -an animal has a url 
 -an animal has details 
+ific name: 
+
+*Tricks 
+ #here doc - http://blog.jayfields.com/2006/12/ruby-multiline-strings-here-doc-or.html
+    #here doc which is giant string
+    #.gsub /^\s+/, "" gets rid of indentation in the here doc
