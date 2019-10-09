@@ -61,5 +61,7 @@ ific name:
 cli.rb 
 -def list_animals method depends on the EndangeredAnimals::Animals.currently class method in order to return instances of @animals
 
+-spec.add_dependency "nokogiri" added this in gemspec file to scrape
+ -(spec.add_development_dependency "rspec") notice it doesnt have development and thats because its not a development one but is for everything
 
 
