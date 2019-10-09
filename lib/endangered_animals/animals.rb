@@ -21,6 +21,8 @@ class EndangeredAnimals::Animals
       animal_2.conservation_status = true 
       animal_2.url = "https://www.worldwildlife.org/species/directory"
       
+      [animal_1, animal_2] #this will give the instances
+      
   end 
   
 end
