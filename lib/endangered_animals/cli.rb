@@ -2,10 +2,10 @@
 class EndangeredAnimals::CLI 
   
   def call 
-    puts "Welcome to World Wild Life!! Where endangered animals are our friends, not food!".colorize(:light_blue)
-   list_animals
-   menu
-   goodbye
+    puts "Welcome To World Wild Life!! Where endangered animals are our friends, not food!".colorize(:light_blue)
+  list_animals
+  menu
+  goodbye
   end 
   
   def list_animals
@@ -13,7 +13,7 @@ class EndangeredAnimals::CLI
     #here doc which is giant string
     #.gsub /^\s+/, '' gets rid of indentation in the here doc
     
-    puts "Choose an animal you'd like to learn more about:".colorize(:green)
+    puts "Choose the number of the animal you'd like to learn more about:".colorize(:green)
     # puts <<-DOC.gsub /^\s+/, ''
     #   1. African Elephant - Scientific name: Loxodonta africana - Conservation status - Vulnerable
     #   2. African Wild Dog - Scientific name: Lycaon pictus - Conservation status - Endangered 
@@ -39,17 +39,19 @@ class EndangeredAnimals::CLI
         puts "#{the_animal.name}"
         puts " - #{the_animal.scientific_name}"
         puts " - #{the_animal.conservation_status}"
-        puts "Type any number for another selection or type 'exit'".colorize(:green)
+        puts "Type list to select another animal or type exit:".colorize(:green)
         #puts @animals[input.to_i-1] this hard codes string. above puts objects in variable.
-      
+        
       elsif input == "list"
-        list_animals
+        list_animals 
       else
-       puts "Not sure what you want? Type list or exit!".colorize(:yellow)
+      puts "Not sure what you want? Type list or exit!".colorize(:yellow)
       end
     end
   end
+
   
+ 
   def goodbye 
     puts "See you later alligator!".colorize(:yellow)
   end
