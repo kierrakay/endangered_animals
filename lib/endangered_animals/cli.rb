@@ -44,8 +44,8 @@ class EndangeredAnimals::CLI
         
       elsif input == "list"
         list_animals 
-      else
-      puts "Not sure what you want? Type list or exit!".colorize(:yellow)
+      # else
+      # puts "Not sure what you want? Type list or exit!".colorize(:yellow)
       end
     end
   end
