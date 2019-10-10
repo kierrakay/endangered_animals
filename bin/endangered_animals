@@ -4,4 +4,7 @@ require "bundler/setup"
 require "endangered_animals"
 
 # have class called CLI that i can instantiate "new" and use the call method on. EndangeredAnimals is the constant
+
 EndangeredAnimals::CLI.new.call #this is also an object that i can code in. once you get ben file working move on.
+EndangeredAnimals::Animals 
+#EndangeredAnimals::Scraper

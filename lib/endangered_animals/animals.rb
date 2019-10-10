@@ -4,7 +4,7 @@
    
     @@all = []
    
-    def intialize (name, url, scientific_name, habitat, conservation_status , description)
+    def initialize (name, url, scientific_name, habitat, conservation_status , description)
       @name = name
       @url = url
       @habitat = habitat 
@@ -19,7 +19,7 @@
   
   
     def self.all
-      EndangeredAnimals::Scraper.scraper_animal_details if @@all.empty?
+      EndangeredAnimals::Scraper.scrape_animal_details if @@all.empty?
       @@all 
     end
 
