@@ -2,6 +2,7 @@
 class EndangeredAnimals::CLI 
   
   def call 
+    puts "Welcome to World Wild Life!! Where endangered animals are our friends, not food!".colorize(:light_blue)
    list_animals
    menu
    goodbye
@@ -12,7 +13,7 @@ class EndangeredAnimals::CLI
     #here doc which is giant string
     #.gsub /^\s+/, '' gets rid of indentation in the here doc
     
-    puts "Current Endangered Animals:"
+    puts "Choose an animal you'd like to learn more about:".colorize(:green)
     # puts <<-DOC.gsub /^\s+/, ''
     #   1. African Elephant - Scientific name: Loxodonta africana - Conservation status - Vulnerable
     #   2. African Wild Dog - Scientific name: Lycaon pictus - Conservation status - Endangered 
@@ -30,7 +31,7 @@ class EndangeredAnimals::CLI
   def menu 
     input = nil 
     while input != "exit" 
-      puts "Select the animal you'd like to read more about or type list to see animals again or type exit to close:" #this is placed inside while loop so it is shown after a number for animal is selected and then user can continue to go back and forth betweween animals. you have recording of this on phone.
+      puts "Select the animal you'd like to read more about or type list to see animals again or type exit to close:".colorize(:light_blue)#this is placed inside while loop so it is shown after a number for animal is selected and then user can continue to go back and forth betweween animals. you have recording of this on phone.
       input = gets.strip.downcase
       
       if input.to_i > 0 
