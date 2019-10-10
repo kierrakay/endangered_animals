@@ -27,7 +27,6 @@ class CLI
     display_animals
     puts "                                "
     puts "Select the number of the animal you'd like to learn more about or type exit to leave program.".colorize(:light_blue)
-    puts ""
     puts "                                "
    
     input = gets.strip.to_i-1 
@@ -37,11 +36,12 @@ class CLI
         
         animal = Animal.all[index]
         Scraper.scrape_animals_details(animal()
-        puts "More information about:".colorize(:light_blue)
+    #puts "More information about:".colorize(:light_blue)
         puts "                                            "
-        puts "|| Common Name #{the_animal.name} ||"
-        puts "|| - #{the_animal.scientific_name} ||"
-        puts " - #{the_animal.conservation_status}"
+        puts "|| Common Name #{animal.name} ||"
+        puts "|| - #{animal.scientific_name} ||"
+        puts "|| Habitat #{animal.habitat}"
+        puts " - #{animal.conservation_status}"
         puts "Type list to select another animal or type exit:".colorize(:green)
         #puts @animals[input.to_i-1] this hard codes string. above puts objects in variable.
         
