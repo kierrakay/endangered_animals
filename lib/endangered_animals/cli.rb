@@ -1,5 +1,5 @@
 #Our CLI controller
-class CLI 
+class EndangeredAnimals::CLI 
   
   def call 
     puts "Welcome To World Wild Life!! Where endangered animals are our friends, not food!".colorize(:light_blue)
@@ -14,7 +14,7 @@ class CLI
   end 
   
   def scrape_animals 
-    Scraper.scrape_animals
+    EndangeredAnimals::Scraper.scrape_animals
   end
   
   def display_animals

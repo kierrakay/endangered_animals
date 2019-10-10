@@ -1,27 +1,31 @@
-  class Animals
+  class EndangeredAnimals::Animals
 
-    attr_accessor :name, :scientific_name, :habitat, :conservation_status, :description, :url
+    attr_accessor :name, :url
    
     @@all = []
    
-    def intialize (attributes)
-      attributes.each do |key, value|
-      instance_variable_set("@#{key}", value)
+    def intialize (name, url)
+      @name = name
+      @url = url
+      # attributes.each do |key, value|
+      # instance_variable_set("@#{key}", value)
+      # @@all = []
       save 
     end 
-  end
+  
   
   
     def self.all
-      Scraper.scraper_animal_details if @@all?empty
+      EndangeredAnimals::Scraper.scraper_animal_details if @@all?empty
       @@all 
     end
+
     
     def save 
       @@all << self 
     end
     
-  end
+   end
       
      
    
@@ -107,7 +111,7 @@
    
    
   #work on second page url and details of animal later
-  def self.currently
+ # def self.currently
     #I should return a bunch of instances of animals and its properties, name Scientific conservation status url
       # puts <<-DOC.gsub /^\s+/, ''
       
