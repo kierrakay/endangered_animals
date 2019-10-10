@@ -67,4 +67,19 @@ cli.rb
 animals.rb 
 -(open("https://www.worldwildlife.org/species/directory")) because youre saying open you need to have require "open-uri" in endangered_animals.rb 
   
+animals.rb
+keep = parsed_page.css('td.keep').... 
+keep.count ...gives list of all animals on page
+keep.first 
+name of animal is = first_animal.css('a').text
+- gets name of animal
 
+
+
+
+
+how to parse
+then do keep.first <enter>
+then do first_animal = keep.first <enter> 
+first_animal <enter> 
+first_animal.css('') <-- to extract deeper based off what youre grabbing.
