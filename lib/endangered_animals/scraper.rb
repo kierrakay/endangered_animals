@@ -8,8 +8,8 @@ class Scraper
     path = .css(" ").attribute("href").value
     url = "https://www.worldwildlife.org#{path}"
     animal = Animal.new(name, scientific_name, conservation_status, url) unless Animal.all.include?(animal)
+    end
   end
-end
 
 def self.scraper_animal_details
   new_page_landing = Nokogiri::HTML(open("#{animal.url}"))
@@ -18,7 +18,8 @@ def self.scraper_animal_details
   animal.scientific_name = new_page_landing.css("").value 
   animal.conservation_status = new_page_landing.css("").value 
   
-end 
+    end 
+    
 end
   
   
