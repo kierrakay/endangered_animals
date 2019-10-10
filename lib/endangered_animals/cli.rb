@@ -19,7 +19,7 @@ class CLI
   
   def display_animals
     Animals.all.each.with_index(1) do |animal,index|
-      puts "#{index}. #{animal.name} - #{animal.scientific_name} - #{animal.conservation_status}"
+      puts "#{index}. #{animal.name}"
     end
   end 
   
