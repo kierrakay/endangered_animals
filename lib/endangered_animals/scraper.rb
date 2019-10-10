@@ -11,7 +11,7 @@ class Scraper
     end
   end
 
-def self.scraper_animal_details
+def self.scraper_animal_details(animal)
   new_page_landing = Nokogiri::HTML(open("#{animal.url}"))
   animal.description = new_page_landing.css("").value 
   animal.habit = new_page_landing.css("").value 

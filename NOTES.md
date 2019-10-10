@@ -75,7 +75,7 @@ name of animal is = first_animal.css('a').text
 - gets name of animal
 
 
-
+h
 
 
 how to parse

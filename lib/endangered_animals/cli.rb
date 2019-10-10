@@ -32,26 +32,29 @@ class CLI
     input = gets.strip.to_i-1 
     number_of_animals = Animal.all.size
     
-      if input.to_i > 0 
-        
+     # if input.to_i > 0 
+        if input.between?(0, number_of_animals -1)
+          index = input 
+          
         animal = Animal.all[index]
         Scraper.scrape_animals_details(animal()
     #puts "More information about:".colorize(:light_blue)
         puts "                                            "
         puts "||Scientific Name||- #{animal.scientific_name}||"
         puts "                                            "
-        puts "||Habitat|| #{animal.habitat}                "
+        puts "||Habitat|| #{animal.habitat}               "
         puts "                                            "
-        puts " ||Description|| #{animal.description}                                            "
+        puts "||Conservatin Status|| #{animal.conservation_status}"
+        puts "                                            "
+        puts " ||Description|| #{animal.description}      "
         puts "Type list to select another animal or type exit:".colorize(:green)
-        #puts @animals[input.to_i-1] this hard codes string. above puts objects in variable.
         
       elsif input == "list"
         list_animals 
       # else
       # puts "Not sure what you want? Type list or exit!".colorize(:yellow)
       end
-    ends
+    # ends
   end
 
   
