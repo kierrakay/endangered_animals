@@ -1,6 +1,6 @@
 class EndangeredAnimals::Animals
 
-  attr_accessor :name, :scientific_name, :conservation_status, :url
+  attr_accessor :name, :scientific_name, :habitat, :conservation_status, :description, :url
    
 #   def self.currently
 #     # scrape worldwildlife and return animals based on data 
