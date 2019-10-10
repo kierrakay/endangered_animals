@@ -18,7 +18,7 @@ class EndangeredAnimals::CLI
   end
   
   def display_animals
-    Animals.all.each.with_index(1) do |animal,index|
+    EndangeredAnimals::Animals.all.each.with_index(1) do |animal,index|
       puts "#{index}. #{animal.name}"
     end
   end 
@@ -29,39 +29,39 @@ class EndangeredAnimals::CLI
     puts "Select the number of the animal you'd like to learn more about or type exit to leave program.".colorize(:light_blue)
     puts "                                "
    
-    input = gets.strip.to_i-1 
-    number_of_animals = Animal.all.size
+    input = gets.strip.to_i-1  #subtract their input by 1 to match element index
+    number_of_animals = EndangeredAnimals::Animal.all.size
     
      # if input.to_i > 0 
         if input.between?(0, number_of_animals -1)
           index = input 
           
-        animal = Animal.all[index]
-        Scraper.scrape_animals_details(animal()
+        animal = EndangeredAnimals::Animal.all[index]
+        EndangeredAnimals::Scraper.scrape_animal_details(animal)
     #puts "More information about:".colorize(:light_blue)
         puts "                                            "
-        puts "||Scientific Name||- #{animal.scientific_name}||"
+        puts "||Scientific Name||- #{animal.scientific_name}"
         puts "                                            "
         puts "||Habitat|| #{animal.habitat}               "
         puts "                                            "
-        puts "||Conservatin Status|| #{animal.conservation_status}"
+        puts "||Conservation Status|| #{animal.conservation_status}"
         puts "                                            "
         puts " ||Description|| #{animal.description}      "
-        puts "Type list to select another animal or type exit:".colorize(:green)
+       #puts "Type list to select another animal or type exit:".colorize(:green)
         
-      elsif input == "list"
+     # else input == "list"
         list_animals 
       # else
-      # puts "Not sure what you want? Type list or exit!".colorize(:yellow)
-      end
-    # ends
+      # puts "Not sure what you want? Type list or exit!".colorize(:yellow) # wont get error message?
+    else 
+      goodbye
+    end
   end
-
-  
  
   def goodbye 
     puts "See you later alligator!".colorize(:yellow)
   end
+  
 end
 
 
