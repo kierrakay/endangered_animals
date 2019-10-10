@@ -40,7 +40,7 @@ class EndangeredAnimals::CLI
         EndangeredAnimals::Scraper.scrape_animal_details(animal)
     #puts "More information about:".colorize(:light_blue)
         puts "                                            "
-        puts "||Scientific Name||- #{animal.scientific_name}"
+        puts "||Scientific Name|| #{animal.scientific_name}"
         puts "                                            "
         puts "||Habitat|| #{animal.habitat}               "
         puts "                                            "

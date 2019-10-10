@@ -12,10 +12,13 @@ class EndangeredAnimals::Scraper
 
   def self.scrape_animal_details(animal)
     new_animal_landing = Nokogiri::HTML(open("#{animal.url}"))
-    animal.description = new_animal_landing.css("div.wysiwyg lead p").text.split(". ") [0..3].join << "."#add period after third sentence?
+    animal.scientific_name = new_animal_landing.css("div.container > em").text.split
     animal.habitat = new_animal_landing.css("div.container").text.split
-    animal.scientific_name = new_animal_landing.css("div.container").text.split
     animal.conservation_status = new_animal_landing.css("div.container").text.split
+    animal.description = new_animal_landing.css("div.wysiwyg > lead p").text.split(". ") [0..3].join << "."#add period after third sentence?
+    
+
+    
     
   end 
     
