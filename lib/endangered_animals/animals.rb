@@ -1,6 +1,41 @@
-class EndangeredAnimals::Animals
+  class Animals
 
-  attr_accessor :name, :scientific_name, :habitat, :conservation_status, :description, :url
+    attr_accessor :name, :scientific_name, :habitat, :conservation_status, :description, :url
+   
+    @@all = []
+   
+    def intialize (attributes)
+      attributes.each do |key, value|
+      instance_variable_set("@#{key}", value)
+      save 
+    end 
+  end
+  
+  
+    def self.all
+      Scraper.scraper_animal_details if @@all?empty
+      @@all 
+    end
+    
+    def save 
+      @@all << self 
+    end
+    
+  end
+      
+     
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    
 #   def self.currently
 #     # scrape worldwildlife and return animals based on data 
