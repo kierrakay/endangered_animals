@@ -76,9 +76,9 @@ class EndangeredAnimals::Animals
     #I should return a bunch of instances of animals and its properties, name Scientific conservation status url
       # puts <<-DOC.gsub /^\s+/, ''
       
-      # 1. African Elephant - Scientific name: Loxodonta africana - Conservation status - Vulnerable
-      # 2. African Wild Dog - Scientific name: Lycaon pictus - Conservation status - Endangered 
-      # DOC
+      1. African Elephant - Scientific name: Loxodonta africana - Conservation status - Vulnerable
+      2. African Wild Dog - Scientific name: Lycaon pictus - Conservation status - Endangered 
+      DOC
       #step 1. delete this once you get working in console. other wise it'll list in console instead of just show instances. this list needs to be in cli.rb
       #step 2. scrape website and return animals based off that data.
       

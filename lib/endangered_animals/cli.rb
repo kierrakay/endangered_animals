@@ -1,43 +1,46 @@
 #Our CLI controller
-class EndangeredAnimals::CLI 
+class CLI 
   
   def call 
     puts "Welcome To World Wild Life!! Where endangered animals are our friends, not food!".colorize(:light_blue)
-  list_animals
-  menu
-  goodbye
+ scrape_animals
+ list_animals
   end 
   
   def list_animals
-    #here doc - http://blog.jayfields.com/2006/12/ruby-multiline-strings-here-doc-or.html
-    #here doc which is giant string
-    #.gsub /^\s+/, '' gets rid of indentation in the here doc
-    
-    puts "Choose the number of the animal you'd like to learn more about:".colorize(:green)
-    # puts <<-DOC.gsub /^\s+/, ''
-    #   1. African Elephant - Scientific name: Loxodonta africana - Conservation status - Vulnerable
-    #   2. African Wild Dog - Scientific name: Lycaon pictus - Conservation status - Endangered 
-    #   DOC
-    #moved this code to animals.rb once we got the cli interface working.
-    
-    
-    #   line below is saying I have an Object called capital a Animals that has a class method called "currently" that calls on class Animals that should return the animals with @animals. 
-      @animals = EndangeredAnimals::Animals.currently
-      @animals.each.with_index(1) do |animal,i|
-        puts "#{i}. #{animal.name} - #{animal.scientific_name} - #{animal.conservation_status}"
-      end
-    end 
+    puts "Would you like to view the list of endangered animals? Enter y or n:".colorize(:green)
+    input = get.strip.downcase
+    input = "y" ? menu : goodbye
+  end 
+  
+  def scrape_animals 
+    Scraper.scrape_animals
+  end
+  
+  def display_animals
+    Animals.all.each.with_index(1) do |animal,index|
+      puts "#{index}. #{animal.name} - #{animal.scientific_name} - #{animal.conservation_status}"
+    end
+  end 
   
   def menu 
-    input = nil 
-    while input != "exit" 
-      input = gets.strip.downcase
+    display_animals
+    puts "                                "
+    puts "Select the number of the animal you'd like to learn more about or type exit to leave program.".colorize(:light_blue)
+    puts ""
+    puts "                                "
+   
+    input = gets.strip.to_i-1 
+    number_of_animals = Animal.all.size
     
       if input.to_i > 0 
+        
+        animal = Animal.all[index]
+        Scraper.scrape_animals_details(animal()
         puts "More information about:".colorize(:light_blue)
-        the_animal = @animals[input.to_i-1]
-        puts "#{the_animal.name}"
-        puts " - #{the_animal.scientific_name}"
+        puts "                                            "
+        puts "|| Common Name #{the_animal.name} ||"
+        puts "|| - #{the_animal.scientific_name} ||"
         puts " - #{the_animal.conservation_status}"
         puts "Type list to select another animal or type exit:".colorize(:green)
         #puts @animals[input.to_i-1] this hard codes string. above puts objects in variable.
