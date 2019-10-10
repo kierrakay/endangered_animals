@@ -1,15 +1,14 @@
-  class EndangeredAnimals::Animals
+
+  class EndangeredAnimals::Animal
 
     attr_accessor :name, :url, :scientific_name, :habitat, :conservation_status, :description
    
     @@all = []
    
-    def initialize (name, url, scientific_name, habitat, conservation_status , description)
+    def initialize (name, url)
       @name = name
       @url = url
-      @habitat = habitat 
-      @conservation_status = conservation_status 
-      @description = description
+      #@habitat = habitat
       # attributes.each do |key, value|
       # instance_variable_set("@#{key}", value)
       # @@all = []
@@ -19,7 +18,7 @@
   
   
     def self.all
-      EndangeredAnimals::Scraper.scrape_animal_details if @@all.empty?
+      EndangeredAnimals::Scraper.scrape_animals if @@all.empty?
       @@all 
     end
 

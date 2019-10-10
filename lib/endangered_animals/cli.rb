@@ -9,8 +9,8 @@ class EndangeredAnimals::CLI
   
   def list_animals
     puts "Would you like to view the list of endangered animals? Enter y or n:".colorize(:green)
-    input = get.strip.downcase
-    input = y ? menu : goodbye
+    input = gets.strip.downcase
+    input = "y" ? menu : goodbye
   end 
   
   def scrape_animals 
@@ -18,7 +18,7 @@ class EndangeredAnimals::CLI
   end
   
   def display_animals
-    EndangeredAnimals::Animals.all.each.with_index(1) do |animal,index|
+    EndangeredAnimals::Animal.all.each.with_index(1) do |animal,index|
       puts "#{index}. #{animal.name}"
     end
   end 

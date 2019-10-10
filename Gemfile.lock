@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     endangered_animals (0.1.0)
+      colorize
       httparty
       nokogiri
 
@@ -45,7 +46,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 2.0)
-  colorize
   endangered_animals!
   httparty
   pry
