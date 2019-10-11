@@ -34,7 +34,7 @@ class EndangeredAnimals::CLI
     input = gets.strip.to_i-1  #subtract their input by 1 to match element index
     number_of_animals = EndangeredAnimals::Animal.all.size
     
-     # if input.to_i > 0 
+   
         if input.between?(0, number_of_animals -1)
           index = input 
           
@@ -61,7 +61,7 @@ class EndangeredAnimals::CLI
   end
  
   def goodbye 
-    puts "See you later alligator!".colorize(:yellow)
+     puts "See you later alligator!".colorize(:yellow)
   end
   
 end
@@ -77,25 +77,3 @@ end
 
 
 
-#   def menu 
-#     input = nil 
-#     while input != "exit" 
-#         puts "Select the animal you'd like to read more about or type list to see animals again or type exit to close:" #this is placed inside while loop so it is shown after a number for animal is selected and then user can continue to go back and forth betweween animals. you have recording of this on phone.
-#       input = gets.strip.downcase
-#       case input 
-#       when "1"
-#         puts "More info on animal 1..."
-#       when "2"
-#           puts "More info on animal 2..."
-#       when "list"
-#         list_animals
-#       else 
-#       puts "Not sure what you want? Type list or exit!"
-#       end
-#     end
-#   end
-  
-#   def goodbye 
-#     puts "See you tomorrow cutie!"
-#   end
-# end
