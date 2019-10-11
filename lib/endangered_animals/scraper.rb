@@ -13,9 +13,10 @@ class EndangeredAnimals::Scraper
     def self.scrape_animal_details(animal)
       new_animal_landing = Nokogiri::HTML(open("#{animal.url}"))
       animal.scientific_name = new_animal_landing.css("div.container > em").text.split(". ") [0..3].join << "."
-      animal.habitat = new_animal_landing.css("ul.list_data > container").text.split
-      animal.conservation_status = new_animal_landing.css("li.highlight").text.split
-      animal.description = new_animal_landing.css("div.wysiwyg.lead > p").text.split(". ") [0..2].join << "."#add period after third sentence?
+      animal.habitat = new_animal_landing.css("div.container first_element_child").text.split(". ") [0..3].join << "."
+      animal.conservation_status = new_animal_landing.css("strong.hdr > div#container").text.split(". ") [0..3].join << "."
+      #animal.description = new_animal_landing.css("div.wysiwyg.lead > p #text").text.split(". ") [0..3].join << "."
+      animal.description = new_animal_landing.css("div.wysiwyg.lead p").text.split(" . ") [0..3].join #[0..3] return range of elements?
      
       
       

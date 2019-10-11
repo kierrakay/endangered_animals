@@ -10,7 +10,7 @@ class EndangeredAnimals::CLI
   def list_animals
     puts "Would you like to view the list of endangered animals? Enter y or n:".colorize(:green)
     input = gets.strip.downcase
-    input = "y" ? menu : goodbye
+    input = "y" ? menu : goodbye # this is broke
   end 
   
   def scrape_animals 
