@@ -13,9 +13,9 @@ class EndangeredAnimals::Scraper
     def self.scrape_animal_details(animal)
       new_animal_landing = Nokogiri::HTML(open("#{animal.url}"))
       animal.scientific_name = new_animal_landing.css("div.container > em").text.split(". ") [0..3].join << "."
-      animal.habitat = new_animal_landing.css().text.split(" . ")[0,1].join #<< "." #fix
+      animal.habitat = new_animal_landing.css("div.lead a").attribute("href").value.split(" . ")[0..1].join #<< "." #fix
       animal.conservation_status = new_animal_landing.css("strong.hdr > div#container").text.split(". ") [0..3].join << "." #fix
-      animal.description = new_animal_landing.css("div.wysiwyg.lead p").text.split(" . ")[0..1].join #[0..3] return any range of elements?
+      animal.description = new_animal_landing.css("div.wysiwyg.lead p").text # #[0..3] return any range of elements?
      
       
       
