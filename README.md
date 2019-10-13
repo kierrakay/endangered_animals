@@ -1,5 +1,24 @@
 # EndangeredAnimals
 
+Welcome to EndangeredAnimals! 
+
+This is a CLI gem portfolio project for oo Ruby learning processes.
+
+It shows an Object Oriented Ruby application using the following concepts:
+
+The use of the concept "self" with Class Methods.
+The use of the concept "self" with Instance Methods.
+Instance Variables.
+Class Variables.
+Command Line Interface (CLI).
+Data extraction from an external source.
+
+It provides a great user interface for retrieving the latest details about endangered animals from the World Wild Life website. 
+
+
+
+
+
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/endangered_animals`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem

@@ -14,7 +14,8 @@
   
   
     def self.all
-      EndangeredAnimals::Scraper.scrape_animals if @@all.empty?
+      self.scrape_animals if @@all.empty?
+     # EndangeredAnimals::Scraper.scrape_animals if @@all.empty?
       @@all 
     end
 
