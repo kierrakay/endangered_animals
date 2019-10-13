@@ -8,10 +8,6 @@
     def initialize (name, url)
       @name = name
       @url = url
-      #@habitat = habitat
-      # attributes.each do |key, value|
-      # instance_variable_set("@#{key}", value)
-      # @@all = []
       save 
     end 
   

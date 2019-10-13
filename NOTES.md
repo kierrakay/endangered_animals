@@ -95,3 +95,4 @@ hot to run program in console
     animal.description = new_animal_landing.css("div.wysiwyg.lead p") [0,2].text.strip -gets first and second paragraph with [0,2]
     
      have class called CLI that i can instantiate "new" and use the call method on. EndangeredAnimals is the constant
+     input = gets.strip.to_i-1  #subtract their input by 1 to match element index
