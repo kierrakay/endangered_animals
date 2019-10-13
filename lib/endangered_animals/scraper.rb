@@ -16,7 +16,10 @@ class EndangeredAnimals::Scraper
       list = new_animal_landing.css("ul.list-data.list-stats")
      # list = new_animal_landing.css("ul.list-data.list-stats.list-items")
       animal.scientific_name = data.css("em")[0].text.strip.split(". ").join << "." if data.length >= 3
-      animal.habitat = list.css("div.container").last.text.strip.split(". ").join << "." if data.length >= 7
+      animal.habitat = list.css( "li:contains('Habitats')").text.strip 
+       #animal.habitat = list.css("li:nth-of-type(7) > div.container").text.strip.split(". ").join << "."  if data.length >= 7
+      # code above kinda works still needs to specify habitat
+      # animal.habitat = list.css("div.container").last.text.strip.split(". ").join << "." if data.length >= 7
       animal.conservation_status = data [0].text.strip.split(". ").join << "." if data.length >= 1
       animal.description = new_animal_landing.css("div.wysiwyg.lead p") [0,2].text.strip #gets first and second paragraph with [0,2]
     end 
@@ -29,10 +32,7 @@ class EndangeredAnimals::Scraper
     
  
 #4 only habitat and conservation status wrong.
-#18 habitat wrong 
 #23 habitat missing 
-#24 habitat missing 
-#25 gorilla habitat wrong *shows the weight which is last property in container for that animal
 #26 broke 
 #28 habitat wrong shows weight 
 #29 habitat and status scientific name wrong. this doesnt have that info. should only display description
