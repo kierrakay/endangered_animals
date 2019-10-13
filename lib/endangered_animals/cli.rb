@@ -40,7 +40,7 @@ class EndangeredAnimals::CLI
           
         animal = EndangeredAnimals::Animal.all[index]
         EndangeredAnimals::Scraper.scrape_animal_details(animal)
-        puts "More information about: #{animal.name}".colorize(:green)
+        puts "Fun facts about: #{animal.name}".colorize(:green)
         puts "                                            "
         puts "||Scientific Name|| #{animal.scientific_name}"
         puts "                                            "
