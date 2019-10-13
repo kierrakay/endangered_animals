@@ -87,9 +87,11 @@ hot to run program in console
 #notes 
     
      animal.habitat = list.css( "li:contains('Habitats')") might not need contains('Habitats')
-    -why does it need (:contains ("habitats") ? because it's looking for that string to get the info for it!
+    -why does it need (:contains ("habitats") ? because its looking for that string to get the info for it!
    
      animal.habitat = list.css("li:nth-of-type(7) > div.container").text.strip.split(". ").join << "."  if data.length >= 7
        -code above kinda works still needs to specify habitat
       
     animal.description = new_animal_landing.css("div.wysiwyg.lead p") [0,2].text.strip -gets first and second paragraph with [0,2]
+    
+     have class called CLI that i can instantiate "new" and use the call method on. EndangeredAnimals is the constant
