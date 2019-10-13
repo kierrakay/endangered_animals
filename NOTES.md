@@ -8,8 +8,7 @@ How to Build a CLI Gem
 6. Start making things real
 7. Discover objects
 8. Program
-
-e
+9. 
 - A command line interface for endangered animals on worldwildlife.org
 
 - Design:
@@ -18,7 +17,7 @@ e
 - "Executables is the file theyre running and it goes in the bin directory."
 
 Ex: 
-1. African Elephant’s - ScientLoxodonta africana - Conservation status - Vulnerable
+1. African Elephant’s - Scientific name :Loxodonta africana - Conservation status - Vulnerable
 2. African Wild Dog - Scientific name: Lycaon  pictus - Conservation Status - Endangered 
 
 Which animal do you want to learn more about?
@@ -45,26 +44,24 @@ What is an animal?
 ific name: 
 
 *Tricks 
- #here doc - http://blog.jayfields.com/2006/12/ruby-multiline-strings-here-doc-or.html
-    #here doc which is giant string
+
+  - here doc - http://blog.jayfields.com/2006/12/ruby-multiline-strings-here-doc-or.html
+ 
+  - (<<-DOC) here doc (which is giant string)
     #.gsub /^\s+/, "" gets rid of indentation in the here doc
-  - when you want to test in console file type "./bin/console and run EndangeredAnimals:Animals.currently" to get instances. 
+  - when you want to test in console file type "./bin/console and run EndangeredAnimals:Animals" to get instances. 
   -  @animals.each.with_index(1) do |animal,i|
-   puts "#{1}. #{animal.name} - #{animal.scientific_name} - #{animal.conservation_status}".. the (1) if you chain 1 with the index itll start array at that index so we dont have to put -1 all the time. 
+   puts "#{1}. #{animal.name} - #{animal.scientific_name} - #{animal.conservation_status}".. the (1) if you chain 1 with the index itll start array at that index so we dont have to put -1 all the time. it'll increment. 
+  -spec.add_dependency "nokogiri" added this in gemspec file to scrape
+ -(spec.add_development_dependency "rspec") notice it doesnt have development like above and thats because its not a development one but is for everything
 
--  cli.rb
-        the_animal = @animals[input.to_i-1]
-        puts "#{the_animal.name} - #{the_animal.scientific_name} - #{the_animal.conservation_status}"
-        #puts @animals[input.to_i-1] <-old code and we changed to above because now we have a variable to hold these objects. where as before we hard coded a string. 
 
-*operation 
-cli.rb 
--def list_animals method depends on the EndangeredAnimals::Animals.currently class method in order to return instances of @animals
+CLI.rb 
+  
+    - have class called CLI that i can instantiate "new" and use the call method on. EndangeredAnimals is the constant
+     input = gets.strip.to_i-1  #subtract their input by 1 to match element index
 
--spec.add_dependency "nokogiri" added this in gemspec file to scrape
- -(spec.add_development_dependency "rspec") notice it doesnt have development and thats because its not a development one but is for everything
-
-animals.rb 
+Animals.rb 
 -(open("https://www.worldwildlife.org/species/directory")) because youre saying open you need to have require "open-uri" in endangered_animals.rb 
   
 animals.rb
@@ -75,24 +72,26 @@ name of animal is = first_animal.css('a').text
 - gets name of animal
 
 
-how to parse
-then do keep.first <enter>
-then do first_animal = keep.first <enter> 
-first_animal <enter> 
-first_animal.css('') <-- to extract deeper based off what youre grabbing.
+How to Parse
 
-hot to run program in console 
-- 
+-then do keep.first <enter>
+-then do first_animal = keep.first <enter> 
+-first_animal <enter> 
+-first_animal.css('') <-- to extract deeper based off what youre grabbing.
 
-#notes 
+how to run program in console 
+- ./bin/console 
+- CLI = EndangeredAnimals.new 
+- CLI = CLI.call 
+
+Scraper: 
     
      animal.habitat = list.css( "li:contains('Habitats')") might not need contains('Habitats')
     -why does it need (:contains ("habitats") ? because its looking for that string to get the info for it!
+    -The code to get the habitat,conservation status, and scientific name  is a bit more involved because these elements in the html contains some extra spans with a prefix and a suffix. First we get the title element using .at_css, which returns a single matching element. Then we loop over the children of the habitat,conservation status element and remove any spans. Finally with the spans gone we get the text of the habitat,conservation status element and strip out any excess whitespace.
    
      animal.habitat = list.css("li:nth-of-type(7) > div.container").text.strip.split(". ").join << "."  if data.length >= 7
        -code above kinda works still needs to specify habitat
       
     animal.description = new_animal_landing.css("div.wysiwyg.lead p") [0,2].text.strip -gets first and second paragraph with [0,2]
-    
-     have class called CLI that i can instantiate "new" and use the call method on. EndangeredAnimals is the constant
-     input = gets.strip.to_i-1  #subtract their input by 1 to match element index
+  
