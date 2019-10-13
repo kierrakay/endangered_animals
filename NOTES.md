@@ -75,11 +75,21 @@ name of animal is = first_animal.css('a').text
 - gets name of animal
 
 
-h
-
-
 how to parse
 then do keep.first <enter>
 then do first_animal = keep.first <enter> 
 first_animal <enter> 
 first_animal.css('') <-- to extract deeper based off what youre grabbing.
+
+hot to run program in console 
+- 
+
+#notes 
+    
+     animal.habitat = list.css( "li:contains('Habitats')") might not need contains('Habitats')
+    -why does it need (:contains ("habitats") ? because it's looking for that string to get the info for it!
+   
+     animal.habitat = list.css("li:nth-of-type(7) > div.container").text.strip.split(". ").join << "."  if data.length >= 7
+       -code above kinda works still needs to specify habitat
+      
+    animal.description = new_animal_landing.css("div.wysiwyg.lead p") [0,2].text.strip -gets first and second paragraph with [0,2]
