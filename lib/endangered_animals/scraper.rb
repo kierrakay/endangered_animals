@@ -8,6 +8,13 @@ class EndangeredAnimals::Scraper
         url = "https://www.worldwildlife.org#{path}"
         animal = EndangeredAnimals::Animal.new(name, url) 
       end
+           doc = Nokogiri::HTML(open("https://www.worldwildlife.org/species/directory?page=2"))
+      doc.css("td.keep a").each do |anchor|
+        name = anchor.text.strip
+        path = anchor.attribute("href").value
+        url = "https://www.worldwildlife.org#{path}"
+        animal = EndangeredAnimals::Animal.new(name, url) 
+      end # make more dryyyy
     end
 
     def self.scrape_animal_details(animal)
