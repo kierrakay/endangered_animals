@@ -6,4 +6,4 @@ require "endangered_animals"
 
 
 EndangeredAnimals::CLI.new.call #this is also an object that i can code in. once you get ben file working move on.
-EndangeredAnimals::Animal 
+

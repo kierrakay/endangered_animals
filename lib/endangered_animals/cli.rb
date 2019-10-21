@@ -49,7 +49,12 @@ class EndangeredAnimals::CLI
           puts " ||Description|| #{animal.description}      "
          
           list_animals 
-   
+          
+          elsif !input.between?(0, number_of_animals -1)
+          puts "Oh crickey! You didn't select a valid number! Would you like select one now? Enter y or n:"
+            input = gets.strip.downcase
+            input == "y" ? menu : goodbye 
+           display_animals
         else 
           goodbye
         end
